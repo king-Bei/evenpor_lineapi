@@ -34,8 +34,9 @@ app.get('/', (req, res) => {
 const passengerRoutes = require('./routes/passengerRoutes');
 app.use('/api/passenger', passengerRoutes);
 
-// Admin API Routes (Placeholder)
-// app.use('/api/admin', adminRoutes);
+// Admin API Routes
+const adminRoutes = require('./routes/adminRoutes');
+app.use('/api/admin', adminRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
