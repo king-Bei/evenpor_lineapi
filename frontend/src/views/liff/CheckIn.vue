@@ -83,6 +83,7 @@
 import { ref, onMounted, reactive } from 'vue';
 import { initLiff, getProfile, closeWindow } from '../../utils/liff';
 import { ElMessage } from 'element-plus';
+import { User, Iphone, Postcard, Calendar } from '@element-plus/icons-vue';
 import axios from 'axios';
 
 const loading = ref(true);
