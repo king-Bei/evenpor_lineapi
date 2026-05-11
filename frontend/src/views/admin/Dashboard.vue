@@ -4,18 +4,18 @@
     <aside class="w-64 bg-slate-900 text-white flex-shrink-0 hidden md:flex flex-col">
       <div class="p-6">
         <h1 class="text-xl font-bold flex items-center">
-          <el-icon class="mr-2"><Management /></el-icon>
+          <el-icon class="mr-2"><Management></Management></el-icon>
           Evenpor Admin
         </h1>
       </div>
       <nav class="mt-4 flex-grow">
         <div class="px-4 py-2 text-xs text-gray-500 uppercase tracking-wider">主要功能</div>
         <a href="#" class="flex items-center px-6 py-3 bg-indigo-600 text-white">
-          <el-icon class="mr-3"><User /></el-icon>
+          <el-icon class="mr-3"><User></User></el-icon>
           旅客管理
         </a>
         <a href="#" class="flex items-center px-6 py-3 text-gray-400 hover:bg-slate-800 hover:text-white transition-colors">
-          <el-icon class="mr-3"><Setting /></el-icon>
+          <el-icon class="mr-3"><Setting></Setting></el-icon>
           系統設定
         </a>
       </nav>
@@ -37,7 +37,7 @@
         <h2 class="text-lg font-semibold text-gray-800">旅客報到管理</h2>
         <div class="flex items-center space-x-4">
           <el-button type="primary" plain @click="triggerFileUpload">
-            <el-icon class="mr-1"><Upload /></el-icon> 匯入 Excel
+            <el-icon class="mr-1"><Upload></Upload></el-icon> 匯入 Excel
           </el-button>
           <input type="file" ref="fileInput" class="hidden" accept=".xlsx, .xls" @change="handleFileChange" />
           <el-avatar :size="32" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
@@ -72,7 +72,7 @@
               class="!w-64"
               clearable
             >
-              <template #prefix><el-icon><Search /></template>
+              <template #prefix><el-icon><Search></Search></el-icon></template>
             </el-input>
           </div>
 
@@ -118,6 +118,7 @@
 import { ref, computed } from 'vue';
 import { parseExcel } from '../../utils/excel';
 import { ElMessage } from 'element-plus';
+import { Management, User, Setting, Upload, Search } from '@element-plus/icons-vue';
 
 const fileInput = ref(null);
 const loading = ref(false);
