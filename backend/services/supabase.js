@@ -9,24 +9,14 @@ if (!supabaseUrl || !supabaseKey) {
   console.error('Missing Supabase environment variables! Please check your .env file.');
 }
 
+// 針對 Node.js 20 以下版本，必須在 realtime 中明確提供 ws 作為 transport
 const supabase = createClient(supabaseUrl, supabaseKey, {
-  realtime: {
-    params: {
-      eventsPerSecond: 10,
-    },
-  },
-  // 針對 Node.js 20 以下版本提供 WebSocket 支援
-  auth: {
-    persistSession: false
-  }
-});
-
-// 如果報錯提示需要 transport，通常是在 realtime 設定中
-const supabaseWithWs = createClient(supabaseUrl, supabaseKey, {
-  accessToken: async () => supabaseKey,
   realtime: {
     transport: ws,
   },
+  auth: {
+    persistSession: false // 後端通常不需要持久化 session
+  }
 });
 
-module.exports = supabaseWithWs;
+module.exports = supabase;
