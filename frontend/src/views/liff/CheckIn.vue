@@ -26,13 +26,13 @@
         <el-form :model="form" :rules="rules" ref="formRef" label-position="top">
           <el-form-item label="真實姓名" prop="name">
             <el-input v-model="form.name" placeholder="請輸入您的真實姓名" size="large">
-              <template #prefix><el-icon><User /></template>
+              <template #prefix><el-icon><User /></el-icon></template>
             </el-input>
           </el-form-item>
 
           <el-form-item label="手機號碼" prop="phone">
             <el-input v-model="form.phone" placeholder="例如: 0912345678" size="large">
-              <template #prefix><el-icon><Iphone /></template>
+              <template #prefix><el-icon><Iphone /></el-icon></template>
             </el-input>
           </el-form-item>
 
@@ -43,7 +43,7 @@
               size="large"
               show-password
             >
-              <template #prefix><el-icon><Postcard /></template>
+              <template #prefix><el-icon><Postcard /></el-icon></template>
             </el-input>
           </el-form-item>
 
@@ -54,7 +54,7 @@
               size="large"
               maxlength="8"
             >
-              <template #prefix><el-icon><Calendar /></template>
+              <template #prefix><el-icon><Calendar /></el-icon></template>
             </el-input>
           </el-form-item>
 
